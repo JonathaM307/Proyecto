@@ -1,4 +1,4 @@
-# Versión 4: Ajuste de Límites Algorítmicos
+# Versión 5: Filtrado de Datos y Validación de Errores
 
 minimo = 1
 maximo = 100
@@ -12,12 +12,18 @@ while respuesta != "correcto":
     intentos += 1
     
     print(f"\n[Intento No. {intentos}] ¿Tu número secreto es el {intento}?")
-    respuesta = input("Respuesta (mayor / menor / correcto): ").strip()
+    # Normalización del texto para evitar fallas por mayúsculas o espacios extra
+    respuesta = input("Respuesta (mayor / menor / correcto): ").strip().lower()
     
-    # Estructura condicional compuesta para redefinir el espacio matemático
+    # Compuerta de validación lógica contra entradas inválidas
+    if respuesta not in ["mayor", "menor", "correcto"]:
+        print("[Alerta] Entrada no válida. Por favor, digite exactamente 'mayor', 'menor' o 'correcto'.")
+        intentos -= 1  # No se cuenta la iteración debido al fallo de entrada
+        continue
+    
     if respuesta == "mayor":
         minimo = intento + 1
     elif respuesta == "menor":
         maximo = intento - 1
 
-print(f"\n¡Logrado! El número ha sido identificado tras {intentos} intentos.")
+print(f"\nSistema cerrado. Solución encontrada con {intentos} intentos.")
