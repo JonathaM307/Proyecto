@@ -12,8 +12,8 @@ def calcular_intento_medio(minimo, maximo):
 def mostrar_encabezado():
     """Despliega la presentación estética inicial del sistema."""
     print("\n" + "="*60)
-    print("        SISTEMA INTERACTIVO ALGORÍTMICO: ADIVINA EL NÚMERO")
-    print("============================================================")
+    print("    SISTEMA INTERACTIVO ALGORÍTMICO: ADIVINA EL NÚMERO")
+    print("="*60)
     print(" Filosofía: Optimizar el cómputo mediante Búsqueda Binaria.")
     print("-"*60)
 
@@ -58,9 +58,11 @@ def main():
             
     # Sección de salida formal con análisis de rendimiento
     print("\n" + "="*60)
-    print("              ¡SISTEMA FINALIZADO CON ÉXITO!")
-    print("============================================================")
+    print("         ¡SISTEMA FINALIZADO CON ÉXITO!")
+    print("="*60)
     print(f" El computador localizó el número secreto: {intento}")
     print(f" Total de intentos / iteraciones realizadas: {intentos}")
     print("="*60 + "\n")
 
+if __name__ == '__main__':
+    main()
